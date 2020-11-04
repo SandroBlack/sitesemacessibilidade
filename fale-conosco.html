@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tudo Sobre Google Glass</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link rel="stylesheet" type="text/css" href="css/form.css"/>
+	<script type="text/javascript" src="javascript/funcoes.js"></script>
+</head>
+
+<body>
+<div id="interface">
+
+<header id="cabecalho">
+	<hgroup>
+		<h1>Google Glass</h1>
+		<h2>A revolução da Google</h2>
+	</hgroup>
+	
+	<img id="icone" src="imagens/contato.png"/>
+
+	<nav id="menu">	
+		<h1>Menu Principal</h1>
+		<ul>
+			<li onmouseover="mudaFoto('imagens/home.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="index.html">Home</a></li>
+			<li onmouseover="mudaFoto('imagens/especificacoes.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+			<li onmouseover="mudaFoto('imagens/fotos.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+			<li onmouseover="mudaFoto('imagens/multimidia.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+			<li onmouseover="mudaFoto('imagens/contato.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+		</ul>	
+	</nav>
+</header>
+<section id="corpo-full">
+	<article id="noticia-principal">
+		<header id="cabecalho-artigo">
+			<hgroup>
+				<h3>Fale Conosco > Contato</h3>
+				<h1>Formulário de Contato</h1>
+				<!--<h2>por Gustavo Guanabara</h2>-->
+				<h3 class="direita">Atualizado em Abril/2020</h3>
+			</hgroup>
+		</header>
+	
+		<form method="post" id="fContato" action="" oninput="calc_total();">
+			<fieldset id="usuario"><legend>Identificação do Usuário</legend>
+				<p><label for="cNome">Nome: <input type="text" name="tNome" id="cNome" size="35" maxlength="35" placeholder="Digite Seu Nome Completo"/></label></p>
+				<p><label for="cSenha">Senha: <input type="password" name="tSenha" id="cSenha" size="15" maxlength="8" placeholder="Máximo 8 Caracteres"/></label></p>
+				<p><label for="cEmail">E-mail: <input type="mail" name="tEmail" id="cEmail" size="25" maxlength="25" placeholder="Digite Seu Email"></label></p>
+				<fieldset id="sexo"><legend>Sexo</legend>
+					<input type="radio" name="tSexo" id="cMasc"/><label for="cMasc">Masculino</label></br>
+					<input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label>
+				</fieldset>	
+				<p>Data de Nascimento: <input type="date" name="tNasc" id="cNasc"></p>
+			</fieldset>
+					
+			<fieldset id="endereco"><legend>Endereço do Usuário</legend>
+				<p><label for="cRua">Logradouro: <input type="text" name="tRua" id="cRua" size="30" maxlength="30" placeholder="Rua, Av, Trav,..."/></p>
+				<p><label for="cNum">Número: <input type="number" name="tNum" id="cNum" min="0" max="9999" placeholder="Número"/></p>
+				<p><label for="cEstado">Estado:</label>
+				<select name="tEstado" id="cEstado">
+					<optgroup label="Região Nordeste">
+						<option value="AL" selected>Alagoas</option>
+						<option value="PE">Pernambuco</option>
+						<option value="SE">Sergipe</option>
+					</optgroup>
+					
+					<optgroup label="Região Sudeste">
+						<option value="SP">São Paulo</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="MG">Minas Gerais</option>
+					</optgroup>
+					
+					<optgroup label="Região Sul">
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="PR">Paraná</option>
+						<option value="SC">Santa Catarina</option>
+					</optgroup>
+				</select></p>
+				
+				<p><label for="cCidade">Cidade: <input type="text" name="tCidade" id="cCidade" size="15" maxlength="30" placeholder="Sua Cidade" list="cidades"></label></p>
+				<datalist id="cidades">
+					<option value="Maceió"></option>
+					<option value="Rio Largo"></option>
+					<option value="Maragogi"></option>
+				</datalist>
+				
+			</fieldset>
+				
+			<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+				<p><label for="">Grau de Urgência: Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/></label>Máx</p>
+				<p><label for="">Mensagem <textarea name="tMen" id="cMen" cols="45" rows="5" placeholder="Deixe Aqui Sua Mensagem"></textarea></label></p>
+			</fieldset>
+			
+			<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+				<p><input type="checkbox" name="tPed" id="cPed" checked /><label for="cPed">Gostaria de adquirir um Google Glass quando disponível!</label></p>
+				<p><label for="cCor">Cor <input type="color" name="tCor" id="cCor" value="#0000ff"/></label></p>
+				<p><label for="cQtd">Quantidade <input type="number" name="tQtd" id="cQtd" min="0" max="10" value="0"/></label></p>
+				<p><label for="">Preço Total: R$</label><input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly></p>
+			</fieldset>
+
+			<input type="submit" name="" id="" value="Enviar">
+			<!--<input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>-->
+		</form>
+	</article>
+</section>
+<footer id="rodape">
+<p>Copyright &copy; 2020 - by Aquilla / Elissandro</br>
+<a href="#" target="_blank">Facebook</a> | <a href="#" target="_blank">Twitter</a></p>
+</footer>
+
+</div>
+</body>
+</html>
